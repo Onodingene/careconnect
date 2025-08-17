@@ -9,14 +9,14 @@
     position: absolute; 
     z-index: 5;
     width: 90%;
-    margin: 20px auto;
-    padding: 10px 20px;
+    margin: 8px auto;
+    padding: 4px 4px;
     background: white;
     border-radius: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   }
   
   .logo {
@@ -28,22 +28,22 @@
 
   .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 32px;
   }
   
   .nav-links li a {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: bold;
   }
   
 .buttons{
     display: flex;
-    gap: 10px;
+    gap: 8px;
     padding: 20px 40px;
     border-radius: 20px;
     background: purple;
     color: white;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
   }
     

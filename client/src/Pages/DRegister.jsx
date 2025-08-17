@@ -1,7 +1,8 @@
-import React from "react";
 import frontpic from "../assets/register.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 flex items-center justify-center p-4">
@@ -49,17 +50,15 @@ function Register() {
               />
             </div>
 
-
-
             <button
               type="submit"
-              className="w-semifull bg-teal-500 hover:bg-teal-600 text-white text-lg font-semibold py-3 rounded-lg transition duration-200"
+              className="w-semifull bg-teal-700 hover:bg-teal-700 text-white text-lg font-semibold py-3 rounded-lg transition duration-200"
+              onClick={()=> navigate('/dashboard')}
             >
               Register
             </button>
           </form>
         </div>
-
       </div>
     </div>
   );

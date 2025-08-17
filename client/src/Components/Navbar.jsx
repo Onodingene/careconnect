@@ -17,7 +17,7 @@ const Navbar = () => {
                 
             </ul>
             <div>
-                <button className="buttons text-teal-700" onClick={() => navigate('/dashboard')}>Get Started</button>
+                <button className="buttons text-teal-700" onClick={() => navigate('/signup')}>Get Started</button>
             </div>
             
         </div>

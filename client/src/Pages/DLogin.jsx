@@ -5,8 +5,7 @@ import frontpic from "../assets/register.jpg";
 function Login() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
-    <div className="bg-white w-full max-w-5xl rounded-2xl shadow-md flex flex-col md:flex-row overflow-hidden">
-      {/* Left Section */}
+    <div className="bg-white w-full max-w-5xl rounded-2xl shadow-md flex flex-col md:flex-row overflow-hidden">    
       <div className="bg-purple-100 md:w-1/2 p-8 flex flex-col justify-center items-center text-center">
         <img src={frontpic} alt="Teacher" className="w-full h-auto mb-6" />
         <p className="text-sm text-gray-700 max-w-xs ">
