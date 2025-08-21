@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    isverifies:{
+    isVerified:{
         type:Boolean,
         default: false
     },

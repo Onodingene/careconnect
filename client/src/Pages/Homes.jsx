@@ -1,10 +1,55 @@
 import React from 'react';
 import './Home.css';
 import Navbar from '../Components/Navbar';
-import about from '../assets/about.jpg';
 import Footer from '../Components/Footer';
+import about from '../assets/about.jpg';
+import { ArrowRight, Heart, Users, Globe, Shield, Zap, Target } from 'lucide-react';
 
 const Home = () => {
+  const features = [
+    {
+      icon: <Heart className="w-6 h-6 text-red-500" />,
+      title: "Helping the Needy",
+      description: "Connect with verified orphanages, shelters, and NGOs to provide essential support through donations and volunteering."
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-blue-500" />,
+      title: "Trusted Giving",
+      description: "All organizations are thoroughly vetted to ensure your contributions make a real impact."
+    },
+    {
+      icon: <Users className="w-6 h-6 text-green-500" />,
+      title: "Community Driven",
+      description: "Join a global community of donors, volunteers, and mentors creating positive change."
+    }
+  ];
+
+  const impactStats = [
+    { number: "50K+", label: "Lives Impacted" },
+    { number: "200+", label: "Verified Organizations" },
+    { number: "$2M+", label: "Donations Facilitated" },
+    { number: "15", label: "Countries Reached" }
+  ];
+
+  const causeCategories = [
+    {
+      label: "Education",
+      img: "/src/assets/education.png"
+    },
+    {
+      label: "Medical",
+      img: "/src/assets/medical.png"
+    },
+    {
+      label: "Emergency",
+      img: "/src/assets/emergency.png"
+    },
+    {
+      label: "Child Welfare",
+      img: "/src/assets/welfare.png"
+    }
+  ];
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -14,165 +59,95 @@ const Home = () => {
           <div className="hero-text">
             <h1 className="hero-title">
               Connecting Those Who Have
-              <span className="gradient-text"> to Those Who Need</span>
+              <span className="text-purple-800"> to Those Who Need</span>
             </h1>
             <p className="hero-subtitle">
-              A trusted platform that connects verified orphanages, shelters, underfunded schools, 
-              and NGOs with generous people and organizations ready to help through donations, 
-              mentorship, volunteering, and resources.
+              A trusted platform connecting verified orphanages, shelters, and NGOs with generous donors, volunteers, and mentors.
             </p>
             <div className="hero-buttons">
-              <button className="btn-primary">Start Giving</button>
-              <button className="btn-secondary">Learn More</button>
-            </div>
-          </div>
-          <div className="floating-cards">
-            <div className="floating-card card-1">
-              <div className="card-icon">❤️</div>
-              <h3>10,000+</h3>
-              <p>Lives Impacted</p>
-            </div>
-            <div className="floating-card card-2">
-              <div className="card-icon">🏠</div>
-              <h3>500+</h3>
-              <p>Organizations</p>
-            </div>
-            <div className="floating-card card-3">
-              <div className="card-icon">🤝</div>
-              <h3>2,000+</h3>
-              <p>Donors</p>
+              <button className="btn-primary">
+                Start Giving <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+              <button className="btn-secondary">
+                Find Organizations
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Impact Stats Section */}
-      <section className="stats-section">
+      <section className="impact-stats">
         <div className="container">
           <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-number">$2.5M+</div>
-              <div className="stat-label">Donations Raised</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">150+</div>
-              <div className="stat-label">Cities Reached</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">98%</div>
-              <div className="stat-label">Transparency Rate</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Support Available</div>
-            </div>
+            {impactStats.map((stat, index) => (
+              <div key={index} className="stat-item">
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+
       <section className="about-section">
         <div className="container">
           <div className="about-grid">
             <div className="about-image">
-              <img src={about} alt="About us" />
+              <img src={about} alt="Making a difference together" className="about-img" />
               <div className="image-overlay">
-                <div className="play-button">▶</div>
+                <Zap className="w-8 h-8 text-yellow-400" />
+                <span>Instant Impact</span>
               </div>
             </div>
             <div className="about-content">
               <h2 className="section-title">
-                Making Giving <span className="highlight">Trusted, Easy & Impactful</span>
+                Giving Made <span className="gradient-text">Fun, Trusted & Easy</span>
               </h2>
               <p className="section-description">
-                We bridge the gap between generosity and need, ensuring every donation reaches 
-                the right hands and creates meaningful change in communities worldwide.
+                We connect verified organizations with passionate donors and volunteers through a transparent, secure platform.
               </p>
-              
               <div className="features-list">
-                <div className="feature-item">
-                  <div className="feature-number">01</div>
-                  <div className="feature-content">
-                    <h3>Verified Organizations</h3>
-                    <p>Every NGO, orphanage, and shelter on our platform is thoroughly vetted and verified for authenticity and impact.</p>
+                {features.map((feature, index) => (
+                  <div key={index} className="feature-item">
+                    <div className="feature-icon">{feature.icon}</div>
+                    <div className="feature-content">
+                      <h3 className="feature-title">{feature.title}</h3>
+                      <p className="feature-description">{feature.description}</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="feature-item">
-                  <div className="feature-number">02</div>
-                  <div className="feature-content">
-                    <h3>Transparent Impact</h3>
-                    <p>Track your donations in real-time and see exactly how your contribution is making a difference in people's lives.</p>
-                  </div>
-                </div>
-                
-                <div className="feature-item">
-                  <div className="feature-number">03</div>
-                  <div className="feature-content">
-                    <h3>Community Building</h3>
-                    <p>Join a network of like-minded individuals and organizations committed to creating positive social change.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Causes Section */}
+ 
       <section className="causes-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Popular Causes</h2>
-            <p className="section-description">Choose from various causes that matter to you</p>
+            <h2 className="section-title">
+              Choose Your <span className="gradient-text">Cause</span>
+            </h2>
+            <p className="section-description">
+              Support verified organizations across various causes that matter to you.
+            </p>
           </div>
-          
           <div className="causes-grid">
-            {[
-              {
-                title: "Education",
-                description: "Support underfunded schools and educational programs",
-                image: "https://images.pexels.com/photos/1720186/pexels-photo-1720186.jpeg",
-                raised: "$125,000",
-                goal: "$200,000",
-                progress: 62
-              },
-              {
-                title: "Healthcare",
-                description: "Provide medical aid and healthcare access",
-                image: "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg",
-                raised: "$89,500",
-                goal: "$150,000",
-                progress: 60
-              },
-              {
-                title: "Emergency Relief",
-                description: "Rapid response for disaster-affected communities",
-                image: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg",
-                raised: "$67,200",
-                goal: "$100,000",
-                progress: 67
-              }
-            ].map((cause, idx) => (
-              <div key={idx} className="cause-card">
+            {causeCategories.map((cause, index) => (
+              <div key={index} className="cause-card">
                 <div className="cause-image">
-                  <img src={cause.image} alt={cause.title} />
+                  <img src={cause.img} alt={cause.label} className="cause-img" />
                   <div className="cause-overlay">
-                    <button className="donate-btn">Donate Now</button>
+                    <Target className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 <div className="cause-content">
-                  <h3 className="cause-title">{cause.title}</h3>
-                  <p className="cause-description">{cause.description}</p>
-                  <div className="progress-section">
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{width: `${cause.progress}%`}}></div>
-                    </div>
-                    <div className="progress-info">
-                      <span className="raised">{cause.raised} raised</span>
-                      <span className="goal">of {cause.goal}</span>
-                    </div>
-                  </div>
+                  <h3 className="cause-title">{cause.label}</h3>
+                  <button className="cause-btn">
+                    Explore <ArrowRight className="w-4 h-4 ml-1" />
+                  </button>
                 </div>
               </div>
             ))}
@@ -180,48 +155,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="how-it-works">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">How It Works</h2>
-            <p className="section-description">Simple steps to make a difference</p>
-          </div>
-          
-          <div className="steps-grid">
-            <div className="step-item">
-              <div className="step-icon">🔍</div>
-              <h3>Discover</h3>
-              <p>Browse verified organizations and causes that align with your values</p>
-            </div>
-            <div className="step-item">
-              <div className="step-icon">💝</div>
-              <h3>Donate</h3>
-              <p>Make secure donations through our trusted payment system</p>
-            </div>
-            <div className="step-item">
-              <div className="step-icon">📊</div>
-              <h3>Track Impact</h3>
-              <p>See real-time updates on how your contribution is making a difference</p>
-            </div>
-            <div className="step-item">
-              <div className="step-icon">🌟</div>
-              <h3>Share</h3>
-              <p>Inspire others by sharing your giving journey and impact stories</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2>Ready to Make a Difference?</h2>
-            <p>Join thousands of donors who are already creating positive change in their communities</p>
+            <h2 className="cta-title">Ready to Make a Difference?</h2>
+            <p className="cta-description">
+              Join our community of changemakers and start creating positive impact today.
+            </p>
             <div className="cta-buttons">
-              <button className="btn-primary">Start Your Journey</button>
-              <button className="btn-outline">Explore Organizations</button>
+              <button className="btn-primary">
+                Get Started <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+              <button className="btn-secondary">
+                Learn More
+              </button>
             </div>
           </div>
         </div>
@@ -231,5 +179,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
