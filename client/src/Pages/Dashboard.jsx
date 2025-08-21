@@ -1,5 +1,5 @@
 import React from "react";
-import './Dashboard.css';
+import './DashBoard.css';
 
 const campaigns = [
   { title: "Books for Bright Minds", progress: 70, goal: "$1000" },
